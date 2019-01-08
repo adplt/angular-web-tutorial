@@ -1,12 +1,289 @@
 <!DOCTYPE html>
-<html lang="en-US">
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-<body>
+<html lang='en-US'>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.js"></script>
+  </head>
 
-<div ng-app="">
-  <p>Name : <input type="text" ng-model="name"></p>
-  <h1>Hello {{name}}</h1>
-</div>
+  <body>
+    <!-- <div ng-app='' ng-init="firstName='John'">
+      get nama dari input <br>
+      <p>Name : <input type='text' ng-model="name"></p>
+      <h1>Hello {{name}}</h1>
+      <br>
+      <br>
+      get nama dari ng-init <br>
+      <p>The name is <span ng-bind='firstName'></span></p>
+      <br>
+      <br>
+      penggunaan ekspresi <br>
+      <p>My first expression: {{5 + 5}}</p>
+      <br>
+      <br>
+    </div> -->
 
-</body>
+    <!-- gabisa jalan kalo berbarengan dengan <div ng-app='' /> -->
+
+    <!-- <div data-ng-app='myApp' data-ng-init="firstName='John'">
+      alternatif untuk AngularJS Directives dengan valid HTML <br>
+      namun gabisa jalan kalo berbarengan dengan <p data-ng-bind-html='myText'></p>
+      <p>The name is <span data-ng-bind='firstName'></span></p>
+      <br>
+      <br>
+    </div> -->
+
+    <!-- <div ng-app=''>
+      First Name: <input type='text' ng-model="firstName"><br>
+      Last Name: <input type='text' ng-model="lastName"><br>
+      <br>
+      Full Name: {{firstName + ' ' + lastName}}
+    </div> -->
+
+    <!--
+      firstName dan lastName jadi string biasa kalo berbarengan dengan <div ng-app='' />
+      maksud'a kalo ada nilai ng-app nya
+    -->
+
+    <!-- <div ng-app='myApp1' ng-controller='myCtrl'>
+      yang ini ada isi'a
+      <br>
+      <br>
+      First Name: <input type='text' ng-model='firstName'><br>
+      Last Name: <input type='text' ng-model='lastName'><br>
+      <br>
+      Full Name: {{firstName + ' ' + lastName}}
+    </div>
+
+    <script>
+      var app = angular.module('myApp1', []);
+      app.controller('myCtrl', ($scope) => {
+          $scope.firstName= 'John';
+          $scope.lastName= 'Doe';
+      });
+    </script> -->
+
+    <!-- <div ng-app='myApp2' ng-controller='myCtrl'>
+      <p ng-bind-html='myText'></p>
+    </div>
+
+    <script>
+      var app = angular.module('myApp2', ['ngSanitize']);
+      app.controller('myCtrl', ['$scope', ($scope) => {
+      $scope.myText = 'My name is: <h1>John Doe</h1>';
+    }]);
+    </script> -->
+
+    <!-- javascript: document write <br>
+
+    <h1>My First Web Page</h1>
+    <p>My first paragraph.</p>
+
+    <button type='button' onclick='document.write(5 + 6)'>Try it</button>
+
+    <br>
+    <br>
+      or this to show directly
+    <br>
+    <br>
+
+    <h1>My First Web Page</h1>
+    <p>My first paragraph.</p>
+
+    <script>
+      document.write(5 + 6);
+    </script> -->
+
+    <!-- <p>Change the value of the input field: </p>
+    <div ng-app='' ng-init='myCol='lightblue''>
+      <input style='background-color:{{myCol}}' ng-model='myCol'>
+      <br>
+      <br>
+    </div> -->
+
+    <!-- AngularJS Expressions (Integer) <br>
+    <div ng-app='' ng-init='quantity=1;cost=5'>
+      <p>Total in dollar: {{quantity * cost}}</p>
+      <br>
+      <br>
+    </div> -->
+
+    <!-- AngularJS Expressions (Integer - using ng-bind) <br>
+    <div ng-app='' ng-init='quantity=1;cost=5'>
+      <p>Total in dollar: <span ng-bind='quantity * cost'></span></p>
+      <br>
+      <br>
+    </div> -->
+
+    <!-- AngularJS Expressions (String) <br>
+    <div ng-app='' ng-init="firstName='John';lastName='Doe'">
+      <p>The name is {{firstName + ' ' + lastName}}</p>
+      <br>
+      <br>
+    </div> -->
+
+    <!-- AngularJS Expressions (Object) <br>
+    <div ng-app='' ng-init="person={firstName:'John',lastName:'Doe'}">
+      <p>The name is {{person.lastName}}</p>
+      <br>
+      <br>
+    </div> -->
+
+    <!-- AngularJS Expressions (Object - using ng-bind) <br>
+    <div ng-app='' ng-init="person={firstName:'John',lastName:'Doe'}">
+      <p>The name is <span ng-bind='person.lastName'></span></p>
+      <br>
+      <br>
+    </div> -->
+
+    <!-- AngularJS Expressions (Array) <br>
+    <div ng-app='' ng-init='points=[1,15,19,2,40]'>
+      <p>The third result is {{points[2]}}</p>
+      <br>
+      <br>
+    </div> -->
+
+    <!-- AngularJS Expressions (Array - using ng-bind) <br>
+    <div ng-app='' ng-init='points=[1,15,19,2,40]'>
+      <p>The third result is <span ng-bind='points[2]'></span></p>
+      <br>
+      <br>
+    </div> -->
+
+    <!-- AngularJS Creating Module and Adding Controller <br>
+    <div ng-app='myApp1' ng-controller='myCtrl'>
+      {{firstName + ' ' + lastName}}
+      <br>
+      <br>
+    </div>
+    <script>
+      var app = angular.module('myApp1', []);
+      app.controller('myCtrl', ($scope) => {
+        $scope.firstName = 'John';
+        $scope.lastName = 'Doe';
+      });
+    </script> -->
+
+    <!-- AngularJS Adding a Directive <br>
+    <div ng-app='myApp2' w3-test-directive />
+    <br>
+    <br>
+    <script>
+      var app = angular.module('myApp2', []);
+      app.directive('w3TestDirective', () => {
+        return {
+          template : 'I was made in a directive constructor!',
+        };
+      });
+    </script> -->
+
+    <!-- Modules and Controllers in Files <br>
+    <div ng-app='myApp' ng-controller='myCtrl'>
+      {{firstName + ' ' + lastName}}
+      <br>
+      <br>
+    </div>
+    <script src='myApp.js'></script>
+    <script src='myCtrl.js'></script> -->
+
+    <!-- Directive adalah fitur dari AngularJS yang menawarkan functionality ke HTML kita. <br>
+    Contoh penggunaan'a: ng-app, ng-init, ng-model. <br><br>
+
+    Ekspresi buat data binding di AngularJS, contoh'a: {{firstName}}. <br>
+    atau ng-bind (pada nilai statis) / ng-model (nilai yang diinput) dan diikuti oleh tag < script /> <br><br>
+
+    ng-model, untuk binding value pada input field di AngularJS. <br>
+    contoh'a dipaling atas. <br><br>
+
+    AngularJS Controllers, contoh'a: app.controller. <br>
+    Controller biasa'a dibuat di file .js terpisah. <br><br>
+
+    AngularJS Scope, membinding nilai antara HTML (view) dan JavaScript (controller). <br>
+    contoh'a: yang ada $scope. <br><br> -->
+
+    <!-- AngularJS Filter: menambahkan filter<br>
+    <div ng-app='myApp' ng-controller='personCtrl'>
+      <p>The name is {{lastName | orderBy}}</p>
+    </div>
+
+    Filter'a:
+    - currency Format a number to a currency format.
+    - date Format a date to a specified format.
+    - filter Select a subset of items from an array.
+    - json Format an object to a JSON string.
+    - limitTo Limits an array/string, into a specified number of elements/characters.
+    - lowercase Format a string to lower case.
+    - number Format a number to a string.
+    - orderBy Orders an array by an expression.
+    - uppercase Format a string to upper case.
+
+    <script>
+      angular.module('myApp', [])
+        .controller('personCtrl', ($scope) => {
+          $scope.firstName = 'John',
+          $scope.lastName = 'Doe'
+      });
+    </script> -->
+
+    <!-- Service in AngularJS: tempat untuk meletakan logic / activity tertentu seperti call API, dll. <br><br>
+    Contoh 1: <br>
+    <div ng-app='myApp' ng-controller='myCtrl'>
+      <p>The url of this page is: </p>
+      <h3>{{myUrl}}</h3>
+    </div>
+
+    <p>This example uses the built-in $location service to get the absolute url of the page.</p>
+
+    <script>
+      var app = angular.module('myApp', []);
+      app.controller('myCtrl', ($scope, $location) => {
+        $scope.myUrl = $location.absUrl();
+      });
+    </script>
+
+    <br><br>
+
+    Contoh 2: <br>
+    <div ng-app='myApp' ng-controller='myCtrl'>
+      <p>Today's welcome message is: </p>
+      <h1>{{myWelcome}}</h1>
+    </div>
+
+    <p>The $http service requests a page on the server,
+      and the response is set as the value of the "myWelcome" variable.</p>
+
+    <script>
+      var app = angular.module('myApp', []);
+      app.controller('myCtrl', ($scope, $http) => {
+        $http.get('http://52.148.90.132:7198/mobile/mysiloam/patientcommon/hospital?areaId=f065d78d-a950-4bea-b691-9e71f08827d4&init=false').
+        then((response) => {
+          $scope.myWelcome = response.data.company;
+        });
+      });
+    </script> -->
+
+    <!-- Pending !!!!!!!!! -->
+    <!-- Contoh 3 untuk yang POST: <br>
+    <div ng-app='myApp' ng-controller='myCtrl'>
+      <p>Today's welcome message is: </p>
+      <h1>{{myWelcome}}</h1>
+    </div>
+
+    <p>The $http service requests a page on the server,
+      and the response is set as the value of the 'myWelcome' variable.</p>
+
+    <script>
+      var app = angular.module('myApp', []);
+      app.controller('myCtrl', ($scope, $http) => $http.post({
+        method: 'POST',
+        url: 'request-url',
+        data: 'message=' + message,
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+      }).
+      then((response) => $scope.myWelcome = response.data.company));
+    </script> -->
+
+    
+  </body>
 </html>
